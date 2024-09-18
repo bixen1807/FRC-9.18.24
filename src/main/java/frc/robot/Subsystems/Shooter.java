@@ -63,7 +63,7 @@ public class Shooter extends SubsystemBase{
         shooterTop.burnFlash();
 
     }
-  /**
+  /*
    * Converts a percentage to velocity in RPMs.
    *
    * @param percent Percentage in integer form.
@@ -74,20 +74,11 @@ public class Shooter extends SubsystemBase{
 
 
     public void setVelocity() {
-        //7 and 9 before
-        // shooterBot.set(SmartDashboard.getNumber("shooterBot", 0.79));
-        // shooterTop.set(SmartDashboard.getNumber("shooterTop", 0.89));
-        // controllerBot.setReference(4484, ControlType.kVelocity);
-        // controllerTop.setReference(5052, ControlType.kVelocity);
-
-        // System.out.println("RUNNING");
-        // shooterBot.set(0.2);
-        // shooterTop.set(0.2);
-
-
-        controllerTop.setReference(toRPM(70), ControlType.kVelocity);
-        controllerBot.setReference(toRPM(80), ControlType.kVelocity);
-
+        
+        /*
+        * Write the execution code here, you'll need to use the FRC-2024 repository as a reference.
+        * Bonus challenge if you complete early, see if you can use Arm.setDesired() to set an angle to shoot at along with the shot itself.
+        */
 
     }
 
