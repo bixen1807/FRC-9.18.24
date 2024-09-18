@@ -29,21 +29,23 @@ public class IntakeCommand extends Command {
 
     @Override
     public void execute(){
-        intake.run();
-        lights.setColorRed(30, 150, 50);
+
 
         if(Constants.intake.intakeSensor.getVoltage()<.5) {
             triggered = true;
         }
-        if(triggered == true) {
-            elapsed++;
-        }
-        if(triggered) {
-            isFinished = true;
-            elapsed = 0;
-            Constants.hasNote = true;
-            lights.setColorGreen(30, 150, 50);
-        }
+        
+        /*
+
+        CREATE THE INTAKE INSTRUCTIONS CODE HERE
+
+        Try to understand what the "triggered", "elapsed", "intakeSensor" and of course "intake" variables do. 
+        Check the constants class for other objects and variables used.
+        As a bonus activity if you finish, try to use the "lights" object in order to make the intake react to having a note inside.
+        
+        */
+        
+        
     }
     @Override
     public boolean isFinished(){
