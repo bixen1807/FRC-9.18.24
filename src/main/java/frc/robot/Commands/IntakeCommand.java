@@ -1,5 +1,6 @@
 package frc.robot.Commands;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj.Timer;
 import frc.robot.Constants;
 import frc.robot.Subsystems.Arm;
 import frc.robot.Subsystems.Intake;
@@ -11,6 +12,7 @@ public class IntakeCommand extends Command {
     private boolean isFinished = false;
     public int elapsed = 0;
     public boolean triggered = false;
+    public Timer tim = new Timer();
     public Lights lights;
     public IntakeCommand(){
         addRequirements(Constants.intake);
@@ -30,11 +32,23 @@ public class IntakeCommand extends Command {
     @Override
     public void execute(){
 
-
+        intake.run();
+        lights.setColorRed(30, 150, 50);
+        
         if(Constants.intake.intakeSensor.getVoltage()<.5) {
             triggered = true;
         }
+
+        tim.start();
         
+        while (true)
+        {
+            if (tim.hasElapsed(5.0))
+            {
+                intake.stop();
+                break;
+            }
+        }
         /*
 
         CREATE THE INTAKE INSTRUCTIONS CODE HERE
